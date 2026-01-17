@@ -96,7 +96,18 @@ def guardrail_ner(text):
 # Route untuk serve UI HTML saat buka root '/'
 @app.get("/")
 async def read_index():
-    return FileResponse('static/index.html')
+    # 1. Ambil lokasi folder di mana main.py berada (yaitu /app)
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # 2. Gabungkan dengan folder static dan file index.html
+    # Hasilnya akan menjadi: /app/static/index.html
+    file_path = os.path.join(base_dir, "static", "index.html")
+    
+    # 3. Kembalikan file tersebut
+    if os.path.exists(file_path):
+        return FileResponse(file_path)
+    else:
+        return {"error": f"File tidak ditemukan di: {file_path}"}
 
 class ChatRequest(BaseModel):
     message: str
