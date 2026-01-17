@@ -1,68 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DompetKu Support</title>
+    <title>DompetKu Secure AI Demo</title>
     <style>
-        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; }
-        .chat-box { height: 400px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
-        .user { color: blue; text-align: right; margin: 5px; }
-        .bot { color: green; text-align: left; margin: 5px; }
-        .debug { font-size: 0.8em; color: gray; background: #f0f0f0; padding: 5px; margin-top: 5px; display: none; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; margin: 0; display: flex; height: 100vh; }
+        
+        /* Layout Utama */
+        .container { display: flex; width: 100%; max-width: 1400px; margin: 0 auto; }
+        
+        /* Kolom Kiri: Chat */
+        .chat-section { width: 40%; padding: 20px; display: flex; flex-direction: column; background: white; border-right: 1px solid #ddd; }
+        .chat-box { flex-grow: 1; overflow-y: auto; border: 1px solid #eee; padding: 15px; margin-bottom: 15px; border-radius: 8px; background: #fafafa; }
+        .input-area { display: flex; gap: 10px; }
+        input[type="text"] { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+
+        /* Bubbles */
+        .msg { padding: 10px 15px; margin: 5px 0; border-radius: 10px; max-width: 80%; line-height: 1.4; }
+        .user { align-self: flex-end; background-color: #e3f2fd; color: #000; margin-left: auto; text-align: right; }
+        .bot { align-self: flex-start; background-color: #d1e7dd; color: #000; margin-right: auto; }
+
+        /* Kolom Kanan: Dashboard */
+        .dashboard-section { width: 60%; padding: 20px; overflow-y: auto; background: #2d2d2d; color: #0f0; font-family: 'Consolas', monospace; }
+        h3 { color: #fff; border-bottom: 1px solid #555; padding-bottom: 5px; margin-top: 0; }
+        
+        .card { background: #1e1e1e; padding: 15px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #444; }
+        .label { color: #aaa; font-size: 0.8em; margin-bottom: 5px; display: block; }
+        pre { margin: 0; white-space: pre-wrap; font-size: 0.9em; }
+        
+        .highlight { color: #ffeb3b; font-weight: bold; }
+        .redacted { color: #ff5252; }
     </style>
 </head>
 <body>
-    <h2>Domi - DompetKu Support AI</h2>
-    <div id="chat-box" class="chat-box"></div>
-    <input type="text" id="msg" placeholder="Ketik pesan..." style="width: 70%;">
-    <button onclick="send()" style="width: 20%;">Kirim</button>
-    <br><br>
-    <label><input type="checkbox" id="showDebug"> Tampilkan Debug (Performance & NER)</label>
 
-    <script>
-        // NANTI GANTI URL INI DENGAN IP PUBLIC DARI KUBERNETES
-        const API_URL = "/chat";
+<div class="container">
+    <div class="chat-section">
+        <h2>📱 DompetKu Support</h2>
+        <div id="chat-box" class="chat-box"></div>
+        <div class="input-area">
+            <input type="text" id="msg" placeholder="Contoh: Saya Budi NIK 3201..." onkeypress="handleKey(event)">
+            <button onclick="send()">Kirim</button>
+        </div>
+        <p style="font-size: 0.8em; color: #666; margin-top: 10px;">
+            *Chatbot ini memiliki tools: Ganti Password, Request Kartu, Withdraw.
+        </p>
+    </div>
 
-        async function send() {
-            const input = document.getElementById("msg");
-            const text = input.value;
-            if(!text) return;
+    <div class="dashboard-section">
+        <h2>🛠️ Backend Live View</h2>
+        
+        <div class="card">
+            <h3>1. Guardrail Process (Security)</h3>
+            <span class="label">Input User Asli:</span>
+            <pre id="debug-original">Waiting input...</pre>
+            <br>
+            <span class="label">Clean Text (Masuk ke LLM):</span>
+            <pre id="debug-clean" class="highlight">Waiting input...</pre>
+            <br>
+            <span class="label">NER Performance:</span>
+            <pre id="debug-perf">-</pre>
+        </div>
 
-            addBubble(text, "user");
-            input.value = "";
+        <div class="card">
+            <h3>2. Secure Session Vault (Mapping)</h3>
+            <span class="label">Data sensitif yang disimpan sementara (Mapping Tag -> Asli):</span>
+            <pre id="debug-session">{}</pre>
+        </div>
+
+        <div class="card">
+            <h3>3. Mock Database (Real-time)</h3>
+            <span class="label">Data User (Perhatikan saldo berubah jika withdraw):</span>
+            <pre id="debug-db">Waiting data...</pre>
+        </div>
+    </div>
+</div>
+
+<script>
+    const API_URL = "/chat"; 
+
+    function handleKey(e) {
+        if (e.key === 'Enter') send();
+    }
+
+    async function send() {
+        const input = document.getElementById("msg");
+        const text = input.value;
+        if(!text) return;
+
+        addBubble(text, "user");
+        input.value = "";
+        
+        // Show loading state
+        document.getElementById("debug-original").innerText = "Processing...";
+        
+        try {
+            const res = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: text })
+            });
+            const data = await res.json();
             
-            try {
-                const res = await fetch(API_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ message: text })
-                });
-                const data = await res.json();
-                
-                addBubble(data.reply, "bot");
-                
-                if(document.getElementById("showDebug").checked) {
-                    addDebug(data.debug);
-                }
-            } catch(e) {
-                addBubble("Error connecting to server.", "bot");
-            }
+            addBubble(data.reply, "bot");
+            updateDashboard(data.debug);
+            
+        } catch(e) {
+            addBubble("Error: " + e, "bot");
         }
+    }
 
-        function addBubble(txt, cls) {
-            const div = document.createElement("div");
-            div.className = cls;
-            div.innerText = txt;
-            document.getElementById("chat-box").appendChild(div);
-        }
+    function addBubble(txt, cls) {
+        const div = document.createElement("div");
+        div.className = "msg " + cls;
+        // Convert Markdown bold to HTML bold simplistic
+        div.innerHTML = txt.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+        
+        const box = document.getElementById("chat-box");
+        box.appendChild(div);
+        box.scrollTop = box.scrollHeight;
+    }
 
-        function addDebug(debugData) {
-            const div = document.createElement("pre");
-            div.className = "debug";
-            div.innerText = "Clean Text: " + debugData.final_clean + 
-                            "\nLatency: " + (debugData.performance.latency_ms || 0) + "ms" +
-                            "\nEntities: " + JSON.stringify(debugData.entities);
-            document.getElementById("chat-box").appendChild(div);
-        }
-    </script>
+    function updateDashboard(debug) {
+        document.getElementById("debug-original").innerText = debug.original;
+        document.getElementById("debug-clean").innerText = debug.final_clean;
+        
+        // Tampilkan NER stats
+        let perfText = `Latency: ${debug.performance.latency_ms || 0} ms\n`;
+        perfText += `Entities Found: ${JSON.stringify(debug.entities, null, 2)}`;
+        document.getElementById("debug-perf").innerText = perfText;
+
+        // Tampilkan Session Data (Vault)
+        document.getElementById("debug-session").innerText = JSON.stringify(debug.session_data, null, 2);
+
+        // Tampilkan Database
+        document.getElementById("debug-db").innerText = JSON.stringify(debug.database, null, 2);
+    }
+</script>
+
 </body>
 </html>
