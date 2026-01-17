@@ -1,0 +1,727 @@
+[
+  {
+    "text": "Halo, nama saya Budi Santoso, nomor KTP saya 3174000000000001.",
+    "truth": [
+      [
+        "Budi Santoso",
+        "PERSON"
+      ],
+      [
+        "3174000000000001",
+        "NIK"
+      ]
+    ]
+  },
+  {
+    "text": "Perkenalkan saya Siti Aminah, NIK 3201123456789000.",
+    "truth": [
+      [
+        "Siti Aminah",
+        "PERSON"
+      ],
+      [
+        "3201123456789000",
+        "NIK"
+      ]
+    ]
+  },
+  {
+    "text": "Saya mau update data, KTP lama hilang, ini NIK baru: 1234567890123456 a.n. Agus Salim.",
+    "truth": [
+      [
+        "1234567890123456",
+        "NIK"
+      ],
+      [
+        "Agus Salim",
+        "PERSON"
+      ]
+    ]
+  },
+  {
+    "text": "Nama: Michael Jordan, No Identitas: 3578123456789001.",
+    "truth": [
+      [
+        "Michael Jordan",
+        "PERSON"
+      ],
+      [
+        "3578123456789001",
+        "NIK"
+      ]
+    ]
+  },
+  {
+    "text": "Tolong cek data saya, Eko Purnomo, 3321012345678910.",
+    "truth": [
+      [
+        "Eko Purnomo",
+        "PERSON"
+      ],
+      [
+        "3321012345678910",
+        "NIK"
+      ]
+    ]
+  },
+  {
+    "text": "Min, KTP saya 6472012345678000 kok ga bisa dipake daftar?",
+    "truth": [
+      [
+        "6472012345678000",
+        "NIK"
+      ]
+    ]
+  },
+  {
+    "text": "Saya Ratna Sari, pemegang KTP DKI 3171012345678999.",
+    "truth": [
+      [
+        "Ratna Sari",
+        "PERSON"
+      ],
+      [
+        "3171012345678999",
+        "NIK"
+      ]
+    ]
+  },
+  {
+    "text": "Data suami saya: Bambang Pamungkas, 3404012345678001.",
+    "truth": [
+      [
+        "Bambang Pamungkas",
+        "PERSON"
+      ],
+      [
+        "3404012345678001",
+        "NIK"
+      ]
+    ]
+  },
+  {
+    "text": "Ini KTP anak saya yg mau didaftarkan: 3674012345678888 a.n. Kevin Sanjaya.",
+    "truth": [
+      [
+        "3674012345678888",
+        "NIK"
+      ],
+      [
+        "Kevin Sanjaya",
+        "PERSON"
+      ]
+    ]
+  },
+  {
+    "text": "Mohon verifikasi NIK 1101012345678900 atas nama Cut Nyak Dien.",
+    "truth": [
+      [
+        "1101012345678900",
+        "NIK"
+      ],
+      [
+        "Cut Nyak Dien",
+        "PERSON"
+      ]
+    ]
+  },
+  {
+    "text": "Paket saya belum sampai ke Jl. Sudirman No. 45 Jakarta Pusat.",
+    "truth": [
+      [
+        "Jl. Sudirman No. 45 Jakarta Pusat",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Tolong kirim ke Jalan Mawar Melati semuanya indah No 12 Bandung.",
+    "truth": [
+      [
+        "Jalan Mawar Melati semuanya indah No 12 Bandung",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Saya pindah alamat ke Apartemen Kalibata City Tower C Lt 12 Jakarta Selatan.",
+    "truth": [
+      [
+        "Apartemen Kalibata City Tower C Lt 12 Jakarta Selatan",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Alamat toko saya di Gang Kelinci No 8 Pasar Baru.",
+    "truth": [
+      [
+        "Gang Kelinci No 8 Pasar Baru",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Kurirnya nyasar, padahal alamatnya jelas: Jl. Kaliurang KM 5 Yogyakarta.",
+    "truth": [
+      [
+        "Jl. Kaliurang KM 5 Yogyakarta",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Rumah saya di Komplek Permata Hijau Blok A1 No 10 Bekasi.",
+    "truth": [
+      [
+        "Komplek Permata Hijau Blok A1 No 10 Bekasi",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Kirim ke kantor saja: Menara BCA Lantai 50, Jl MH Thamrin Jakarta.",
+    "truth": [
+      [
+        "Menara BCA Lantai 50, Jl MH Thamrin Jakarta",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Saya tinggal di Surabaya, tepatnya di Jalan Tunjungan No 55.",
+    "truth": [
+      [
+        "Jalan Tunjungan No 55",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Alamat pengembalian: Jl. Raya Bogor KM 30 Cimanggis Depok.",
+    "truth": [
+      [
+        "Jl. Raya Bogor KM 30 Cimanggis Depok",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Min ganti alamat dong jadi ke Jl. Pahlawan Seribu BSD City Tangerang.",
+    "truth": [
+      [
+        "Jl. Pahlawan Seribu BSD City Tangerang",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Hubungi saya di 081234567890 ya min.",
+    "truth": [
+      [
+        "081234567890",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Email saya budi.santoso@gmail.com tolong dicek.",
+    "truth": [
+      [
+        "budi.santoso@gmail.com",
+        "EMAIL"
+      ]
+    ]
+  },
+  {
+    "text": "Nomor hp lama hilang, ganti ke +628112345678.",
+    "truth": [
+      [
+        "+628112345678",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Tolong kirim invoice ke finance@perusahaan.co.id.",
+    "truth": [
+      [
+        "finance@perusahaan.co.id",
+        "EMAIL"
+      ]
+    ]
+  },
+  {
+    "text": "WA saya error, telpon aja ke 085712345678.",
+    "truth": [
+      [
+        "085712345678",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Akun saya terkunci, emailnya user123@yahoo.com.",
+    "truth": [
+      [
+        "user123@yahoo.com",
+        "EMAIL"
+      ]
+    ]
+  },
+  {
+    "text": "Bisa hubungi istri saya di 081398765432.",
+    "truth": [
+      [
+        "081398765432",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Email alternatif saya: arif_ganteng123@student.ub.ac.id.",
+    "truth": [
+      [
+        "arif_ganteng123@student.ub.ac.id",
+        "EMAIL"
+      ]
+    ]
+  },
+  {
+    "text": "Jangan telpon ke 021-7894561, itu nomor kantor.",
+    "truth": [
+      [
+        "021-7894561",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Konfirmasi kode OTP masuk ke 089612345678 kan?",
+    "truth": [
+      [
+        "089612345678",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Saya sudah transfer ke BCA 1234567890 an Budi.",
+    "truth": [
+      [
+        "1234567890",
+        "BANK_NUM"
+      ],
+      [
+        "Budi",
+        "PERSON"
+      ]
+    ]
+  },
+  {
+    "text": "Tolong cek mutasi rekening Mandiri 1010001234567.",
+    "truth": [
+      [
+        "1010001234567",
+        "BANK_NUM"
+      ]
+    ]
+  },
+  {
+    "text": "Mau lapor penipuan, pelaku minta transfer ke BRI 012301012345500.",
+    "truth": [
+      [
+        "012301012345500",
+        "BANK_NUM"
+      ]
+    ]
+  },
+  {
+    "text": "Rekening tujuan salah, harusnya ke BNI 0987654321.",
+    "truth": [
+      [
+        "0987654321",
+        "BANK_NUM"
+      ]
+    ]
+  },
+  {
+    "text": "Saya mau ganti nomor rekening pencairan ke Jenius 90012345678.",
+    "truth": [
+      [
+        "90012345678",
+        "BANK_NUM"
+      ]
+    ]
+  },
+  {
+    "text": "Top up saldo ke akun OVO 08123456789 belum masuk.",
+    "truth": [
+      [
+        "08123456789",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Virtual Account BCA 8801234567890 kok tagihannya beda?",
+    "truth": [
+      [
+        "8801234567890",
+        "BANK_NUM"
+      ]
+    ]
+  },
+  {
+    "text": "No rek saya 5555012345 di Bank Jago.",
+    "truth": [
+      [
+        "5555012345",
+        "BANK_NUM"
+      ]
+    ]
+  },
+  {
+    "text": "Transfer dari CIMB Niaga 700123456789 berhasil tapi saldo belum nambah.",
+    "truth": [
+      [
+        "700123456789",
+        "BANK_NUM"
+      ]
+    ]
+  },
+  {
+    "text": "Dana refund tolong masukin ke Gopay 081298765432 aja.",
+    "truth": [
+      [
+        "081298765432",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Saya lahir tanggal 17 Agustus 1945.",
+    "truth": [
+      [
+        "17 Agustus 1945",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Data tanggal lahir salah, harusnya 01-01-1990.",
+    "truth": [
+      [
+        "01-01-1990",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Verifikasi data: Tgl lahir 12/12/2000.",
+    "truth": [
+      [
+        "12/12/2000",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Ultah saya 29 Februari 1996 min, jadi 4 tahun sekali.",
+    "truth": [
+      [
+        "29 Februari 1996",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Lahir di Jakarta, 30 September 1988.",
+    "truth": [
+      [
+        "30 September 1988",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Password saya tanggal lahir: 15051995.",
+    "truth": [
+      [
+        "15051995",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Ibu saya lahir tahun 1965 tanggal 5 Oktober.",
+    "truth": [
+      [
+        "tahun 1965 tanggal 5 Oktober",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Salah input tahun lahir, tertulis 2024 padahal 2004.",
+    "truth": []
+  },
+  {
+    "text": "TTL: Bandung, 20-05-1998.",
+    "truth": [
+      [
+        "20-05-1998",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Saya mau klaim promo ulang tahun tanggal 21 April nanti.",
+    "truth": [
+      [
+        "21 April",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Min nm sy joko, ktp ilng gmn dng?",
+    "truth": [
+      [
+        "joko",
+        "PERSON"
+      ]
+    ]
+  },
+  {
+    "text": "Almt sy d jln pramuka ry no 5 jkt pst.",
+    "truth": [
+      [
+        "jln pramuka ry no 5 jkt pst",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "No hp ak 0812-3333-4444 tlg d hub y.",
+    "truth": [
+      [
+        "0812-3333-4444",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Email aq cutie_girl@gmail.com lupa passwrd.",
+    "truth": [
+      [
+        "cutie_girl@gmail.com",
+        "EMAIL"
+      ]
+    ]
+  },
+  {
+    "text": "Sy tf ke rek bca 555000111 ats nm dewi.",
+    "truth": [
+      [
+        "555000111",
+        "BANK_NUM"
+      ],
+      [
+        "dewi",
+        "PERSON"
+      ]
+    ]
+  },
+  {
+    "text": "Nik sy 3275000011112222 kok dibilang ga trdaftar?",
+    "truth": [
+      [
+        "3275000011112222",
+        "NIK"
+      ]
+    ]
+  },
+  {
+    "text": "Pkt kpn smpe k rmh sy d jl nangka depok?",
+    "truth": [
+      [
+        "jl nangka depok",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Tlg apus data sy no hp 087812341234 ganggu bgt.",
+    "truth": [
+      [
+        "087812341234",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Lhr tgl 5 bln 5 thn 2000.",
+    "truth": [
+      [
+        "5 bln 5 thn 2000",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Krm k kntr aje di scbd lot 8 jaksel.",
+    "truth": [
+      [
+        "scbd lot 8 jaksel",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Nama Aris, NIK 3301234567890001, HP 08123456789, Email aris@mail.com.",
+    "truth": [
+      [
+        "Aris",
+        "PERSON"
+      ],
+      [
+        "3301234567890001",
+        "NIK"
+      ],
+      [
+        "08123456789",
+        "PHONE"
+      ],
+      [
+        "aris@mail.com",
+        "EMAIL"
+      ]
+    ]
+  },
+  {
+    "text": "Tolong kirim ke Jl. Merdeka No 1, penerima Susi (0811223344).",
+    "truth": [
+      [
+        "Jl. Merdeka No 1",
+        "ADDRESS"
+      ],
+      [
+        "Susi",
+        "PERSON"
+      ],
+      [
+        "0811223344",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Saya Budi (3175000100020003) mau lapor transfer ke 1234567890 gagal.",
+    "truth": [
+      [
+        "Budi",
+        "PERSON"
+      ],
+      [
+        "3175000100020003",
+        "NIK"
+      ],
+      [
+        "1234567890",
+        "BANK_NUM"
+      ]
+    ]
+  },
+  {
+    "text": "Data baru: Nama Citra, Alamat Jl. Dago 40 Bandung, Lahir 10-10-1995.",
+    "truth": [
+      [
+        "Citra",
+        "PERSON"
+      ],
+      [
+        "Jl. Dago 40 Bandung",
+        "ADDRESS"
+      ],
+      [
+        "10-10-1995",
+        "BIRTHDATE"
+      ]
+    ]
+  },
+  {
+    "text": "Konfirmasi pesanan an. Reza Rahadian ke Apartemen Menteng Park.",
+    "truth": [
+      [
+        "Reza Rahadian",
+        "PERSON"
+      ],
+      [
+        "Apartemen Menteng Park",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Refund tiket ke rek BCA 5432167890 a/n Dian Sastro.",
+    "truth": [
+      [
+        "5432167890",
+        "BANK_NUM"
+      ],
+      [
+        "Dian Sastro",
+        "PERSON"
+      ]
+    ]
+  },
+  {
+    "text": "Saya menemukan KTP 3671000000000001 atas nama Raffi Ahmad di jalan.",
+    "truth": [
+      [
+        "3671000000000001",
+        "NIK"
+      ],
+      [
+        "Raffi Ahmad",
+        "PERSON"
+      ]
+    ]
+  },
+  {
+    "text": "Mohon update email jadi deddy.corbuzier@master.com dan hp 0811111111.",
+    "truth": [
+      [
+        "deddy.corbuzier@master.com",
+        "EMAIL"
+      ],
+      [
+        "0811111111",
+        "PHONE"
+      ]
+    ]
+  },
+  {
+    "text": "Alamat tagihan kirim ke kantor pajak jl gatot subroto kav 50.",
+    "truth": [
+      [
+        "kantor pajak jl gatot subroto kav 50",
+        "ADDRESS"
+      ]
+    ]
+  },
+  {
+    "text": "Saya transfer 500rb ke 9876543210 dari rek 1234567890.",
+    "truth": [
+      [
+        "9876543210",
+        "BANK_NUM"
+      ],
+      [
+        "1234567890",
+        "BANK_NUM"
+      ]
+    ]
+  }
+]

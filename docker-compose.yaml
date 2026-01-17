@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # Service 1: Model NER (Berat, jalan di port 8000)
+  ner-service:
+    build: ./ner_service
+    container_name: ner_container
+    ports:
+      - "8000:8000"
+    environment:
+      - HF_TOKEN=${HF_TOKEN}
+      - CUDA_VISIBLE_DEVICES="" # Force CPU
+    restart: unless-stopped
+
+  # Service 2: Agent Logic + UI (Ringan, jalan di port 8080)
+  agent-service:
+    build: ./agent_service
+    container_name: agent_container
+    ports:
+      - "8080:8080"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      # Di dalam jaringan Docker, kita panggil nama service-nya ("ner-service"), bukan localhost
+      - NER_SERVICE_URL=http://ner-service:8000/predict
+    depends_on:
+      - ner-service
